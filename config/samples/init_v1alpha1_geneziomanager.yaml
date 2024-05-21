@@ -1,0 +1,12 @@
+apiVersion: init.genezio.com/v1alpha1
+kind: GenezioManager
+metadata:
+  labels:
+    app.kubernetes.io/name: geneziomanager
+    app.kubernetes.io/instance: geneziomanager-sample
+    app.kubernetes.io/part-of: genezio-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: genezio-operator
+  name: geneziomanager-sample
+spec:
+  # TODO(user): Add fields here

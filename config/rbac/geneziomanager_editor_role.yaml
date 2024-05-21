@@ -1,0 +1,31 @@
+# permissions for end users to edit geneziomanagers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: geneziomanager-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: genezio-operator
+    app.kubernetes.io/part-of: genezio-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: geneziomanager-editor-role
+rules:
+- apiGroups:
+  - init.genezio.com
+  resources:
+  - geneziomanagers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - init.genezio.com
+  resources:
+  - geneziomanagers/status
+  verbs:
+  - get

@@ -1,0 +1,27 @@
+# permissions for end users to view geneziomanagers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: geneziomanager-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: genezio-operator
+    app.kubernetes.io/part-of: genezio-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: geneziomanager-viewer-role
+rules:
+- apiGroups:
+  - init.genezio.com
+  resources:
+  - geneziomanagers
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - init.genezio.com
+  resources:
+  - geneziomanagers/status
+  verbs:
+  - get

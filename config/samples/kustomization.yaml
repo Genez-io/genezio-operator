@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- init_v1alpha1_geneziomanager.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples
